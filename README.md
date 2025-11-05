@@ -31,6 +31,7 @@ It connects seamlessly to **n8n**, **Ollama**, or **custom REST APIs**, providin
 ✅ Plug-and-play script embedding  
 ✅ Fully client-side, privacy-friendly  
 
+![AIChatLite Preview](AIChatLite.png)
 
 https://www.awesomescreenshot.com/video/46036343?key=98e8dc7c65a442ae625c0f77bb7d7dce
 
