@@ -103,23 +103,35 @@ Greeting and “welcome back” messages
 
 For developers who want programmatic control:
 
-    <script>
-      new ChatWidget({
-        title: "AI Assistant",
-        webhookUrl: "https://n8n.yourdomain.com/webhook/ai-chat",
-        model: "llama3", // optional, for Ollama or LLM mode
-        greeting: "Hi there 👋 How can I assist you today?",
-        color: "#16a34a",
-        typingSpeed: 20,
-        storageKey: "customChatKey", // optional
-        theme: "dark", // optional theme mode
-        placeholder: "Type your question here...", // optional
-        position: "bottom-right" // optional, values: bottom-right | bottom-left
-      });
-    </script>
+initialize via JavaScript:
+
+      <script src="aichatlite.js"></script>
+      <script>
+        new AIChatLite({
+          webhookUrl: "https://n8n.yourdomain.com/webhook/ai-chat",
+          title: "AI Assistant",
+          greeting: "Hi 👋 Ask me anything!",
+          color: "#038122ff"
+        });
+      </script>
+      
+initialize for LLM Ollama API:
+
+      <script src="aichatlite.js"></script>
+      <script>
+        new AIChatLite({
+          webhookUrl: "http://localhost:11434/api/generate",
+          model: "llama3.2:3b", // <-- Only extra field
+          title: "Local Llama 🦙",
+          greeting: "Hi 👋 Ask me anything (local AI)!",
+          color: "#038122ff"
+        });
+      </script>
 
 </details>
+
 ⚙️ Available Config Options
+
       Option	Type	Default	Description
       title	string	"Chat with us"	Widget header title
       webhookUrl	string	""	API or webhook endpoint
@@ -128,10 +140,7 @@ For developers who want programmatic control:
       color	string	"#0d6efd"	Widget accent color
       typingSpeed	number	25	Typing animation speed
       storageKey	string	"chatWidgetConversation"	LocalStorage key for session data
-      theme	string	"light"	Optional theme (light / dark)
-      placeholder	string	"Type a message..."	Input box placeholder
-      position	string	"bottom-right"	Widget placement on screen
-      <details> <summary>🔌 <b>API Integration</b></summary>
+
 
 AIChatLite.js can connect to any backend, including n8n and Ollama, using simple JSON requests.
 
@@ -155,6 +164,8 @@ Expected Response
 Add Webhook Trigger (POST) node
 
 Add AI Model or logic node (OpenAI, Ollama, Gemini, etc.)
+
+You can use my n8n_workflow.json template & added the configuration.
 
 Use a Respond to Webhook node with:
 
@@ -189,8 +200,17 @@ Success is the sum of small efforts repeated day in and day out.
 </details>
 <details> <summary>📘 <b>Example Combined Reference</b></summary>
 Mode	Request Payload	Expected Response	Example Output
-n8n API	{ "message": "Hi" }	{ "output": "Hello! How can I help you today?" }	“Hello! How can I help you today?”
-Ollama API	{ "model": "llama3", "prompt": "Tell a joke" }	{ "response": "Why did the AI cross the road? To optimize the other side!" }	“Why did the AI cross the road? To optimize the other side!”
+n8n API
+      
+      { "message": "Hi" }	
+      { "output": "Hello! How can I help you today?" }	
+      “Hello! How can I help you today?”
+      
+Ollama API	
+
+      { "model": "llama3", "prompt": "Tell a joke" }	
+      { "response": "Why did the AI cross the road? To optimize the other side!" }	
+      “Why did the AI cross the road? To optimize the other side!”
 </details>
 💾 Session Management
 
@@ -238,7 +258,7 @@ You can customize the widget’s look by overriding styles in your CSS:
 
 You can dynamically set webhookUrl at runtime:
 
-    const widget = new ChatWidget({
+    const widget = new AIChatLite({
       webhookUrl: `/api/chatbot?tenant=${currentUserId}`
     });
 
@@ -255,26 +275,24 @@ Manually clear stored chat history:
 This project is a pure JS library (no build tools required).
 However, for contributing or development:
 
-git clone https://github.com/biswajitnandi/AIChatLite.js.git
-cd AIChatLite.js
-
 
 You can edit aichatlite.js directly and test it using index.html.
 
 </details>
+
 ❓ FAQ
 
-Q: Can I use it without n8n?
-✅ Yes — any REST API that accepts JSON input and returns a text response works.
-
-Q: Can it work offline with Ollama?
-✅ Yes — just point data-webhook to your local Ollama endpoint.
-
-Q: Does it support streaming replies?
-🚧 Not yet — coming soon (planned feature).
-
-Q: Can I use it in React/Vue?
-✅ Absolutely. Just include the script in public/index.html.
+      Q: Can I use it without n8n?
+      ✅ Yes — any REST API that accepts JSON input and returns a text response works.
+      
+      Q: Can it work offline with Ollama?
+      ✅ Yes — just point data-webhook to your local Ollama endpoint.
+      
+      Q: Does it support streaming replies?
+      🚧 Not yet — coming soon (planned feature).
+      
+      Q: Can I use it in React/Vue?
+      ✅ Absolutely. Just include the script in public/index.html.
 
 🔐 Security Notes
 
