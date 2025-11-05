@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIChatLite.js – Lightweight AI Chat Widget for n8n & Ollama</title>
+
+  <!-- 🔍 SEO -->
+  <meta name="description" content="AIChatLite.js is a lightweight open-source AI chat widget for websites. Connect it with n8n, Ollama, or any REST API to create AI chatbots, private assistants, support bots, and knowledge guides." />
+  <meta name="keywords" content="ai chat widget, n8n chat widget, ollama chat ui, ai assistant widget, javascript chatbot, support bot, knowledge guide" />
+  <meta name="author" content="Biswajit Nandi" />
+
+  <!-- 🌐 Open Graph (social preview) -->
+  <meta property="og:title" content="AIChatLite.js — AI Chat Widget for n8n, Ollama & REST APIs">
+  <meta property="og:description" content="Embed AIChatLite.js to turn any website into an intelligent chat assistant — lightweight, fast, and open-source.">
+  <meta property="og:image" content="https://yourdomain.com/assets/preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourdomain.com/">
+
+  <!-- 🧠 Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- 💅 Basic styling for demo -->
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+      background: #f8fafc;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background: linear-gradient(135deg, #0d6efd, #3b82f6);
+      color: white;
+    }
+    header h1 {
+      margin-bottom: 0.3rem;
+      font-size: 2.2rem;
+    }
+    header p {
+      margin-top: 0;
+      opacity: 0.9;
+    }
+    section {
+      max-width: 850px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    h2 {
+      color: #0d6efd;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 0.4rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    ul li::before {
+      content: "💡";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    footer a {
+      color: #0d6efd;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🌟 Header -->
+  <header>
+    <h1>AIChatLite.js</h1>
+    <p>Lightweight AI Chat Widget for n8n, Ollama & REST APIs</p>
+  </header>
+
+  <!-- 🔧 Overview Section -->
+  <section>
+    <h2>About</h2>
+    <p><strong>AIChatLite.js</strong> is a zero-dependency, open-source chat widget that adds
+      an intelligent AI assistant to any website. It integrates directly with
+      <b>n8n</b>, <b>Ollama</b>, or any <b>custom REST API</b>.</p>
+
+    <h2>Use Cases</h2>
+    <ul>
+      <li><strong>AI Chatbot</strong> — General conversational AI for websites</li>
+      <li><strong>Private AI Assistant</strong> — Secure local AI chat using Ollama</li>
+      <li><strong>Support Assistant</strong> — Automated helpdesk or FAQ bot</li>
+      <li><strong>Knowledge Guider</strong> — Conversational manual or documentation assistant</li>
+    </ul>
+
+    <h2>Demo</h2>
+    <p>Click the 💬 chat icon at the bottom-right corner to start chatting with the AI Assistant.
+       The widget is connected to a demo <code>n8n</code> webhook.</p>
+
+    <h2>Integration Example</h2>
+    <pre style="background:#f1f5f9;padding:1rem;border-radius:6px;overflow-x:auto;">
+&lt;script
+  src="aichatlite.js"
+  data-webhook="https://n8n.yourdomain.com/webhook/ai-chat"
+  data-title="AI Assistant"
+  data-greeting="👋 Hi! How can I assist you today?"
+  data-color="#0d6efd"
+&gt;&lt;/script&gt;
+    </pre>
+  </section>
+
+  <!-- 🧾 Footer -->
+  <footer>
+    <p>Made with ❤️ by <a href="https://github.com/techbisu" target="_blank">Biswajit Nandi</a> · MIT License</p>
+    <p><a href="https://github.com/techbisu/AIChatLite.js" target="_blank">View on GitHub</a></p>
+  </footer>
+
+  <!-- 💬 Chat Widget Script -->
+  <script
+    src="aichatlite.js"
+    data-webhook="https://n8n.yourdomain.com/webhook/ai-chat"
+    data-title="AI Assistant"
+    data-greeting="👋 Hi there! How can I help you today?"
+    data-color="#0d6efd"
+  ></script>
+
+
+
+</body>
+</html>
